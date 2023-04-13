@@ -2,40 +2,43 @@ package exercicios_aulas25_27;
 
 public class ContaCorrente {
 
-	String banco;
-	String titular;
+	String numero;
+	String agencia;
+	boolean contaEspecial;
+	double limiteEspecial;
+	double valorEspecialUsado;
 	int numConta;
 	double saldo;
-	boolean contaEspecial;
-	int limite;
 
 	// Saque
-	double sacarDinheiro(double saque, int limite) {
-		if (saldo > 0 && saque > 0 && saque < limite) {
-			saldo = saldo - saque;
-			return saldo;
-		}
-		return 0;
-	}
+	boolean realizarSaque(double quantiaASacar) {
 
-	// Deposito
-	double depositarDinheiro(double deposito) {
-		saldo = saldo +  deposito;
-		return saldo;
-	}
-
-	// Consultar saldo
-	double consultarSaldo() {
-		return saldo;
-	}
-	
-	// Verificar conta especial
-	
-	boolean verificarContaEspecial() {
-		if (contaEspecial) {
+		if (saldo >= quantiaASacar) {
+			saldo -= quantiaASacar;
 			return true;
 		} else {
-			return false;
+			if (contaEspecial) {
+				double limite = limiteEspecial + saldo;
+				if (limite >= quantiaASacar) {
+					saldo -= quantiaASacar;
+					return true;
+				}
+			} else {
+				return false;
+			}
 		}
+		return false;
+	}
+
+	void depositar(double valorDepositado) {
+		saldo += valorDepositado;
+	}
+	
+	void consultarSaldo() {
+		System.out.println("Saldo atual da conta: " + saldo);
+	}
+	
+	boolean verificarUsoChequeEspecial() {
+		return saldo < 0;
 	}
 }

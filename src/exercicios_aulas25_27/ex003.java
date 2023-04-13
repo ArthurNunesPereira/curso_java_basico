@@ -1,35 +1,47 @@
 package exercicios_aulas25_27;
 
 import java.text.DecimalFormat;
+import java.util.Scanner;
 
 public class ex003 {
 
 	public static void main(String[] args) {
+		Scanner scan = new Scanner(System.in);
 		DecimalFormat formatador = new DecimalFormat("0.00");
 		
 		Aluno aluno = new Aluno();
 		
-		aluno.nome = "Kleber";
-		aluno.matricula = 9999;
-		aluno.curso = "Analise e desenvolvimento de sistemas";
-		aluno.disciplinas = new String[3];
-		aluno.disciplinas[0] = "Lógica";
-		aluno.disciplinas[1] = "POO";
-		aluno.disciplinas[2] = "Engenharia de Software II";
+		System.out.println("Digite o nome do aluno:");
+		aluno.nome = scan.next();
 		
-		aluno.notas = new String[3];
-		aluno.notas[0] = "9";
-		aluno.notas[1] = "8";
-		aluno.notas[2] = "7";
+		System.out.println("Digite a matricula do aluno:");
+		aluno.matricula = scan.nextInt();
 		
-		System.out.println("Titulo do livro: " + aluno.nome);
-		System.out.println("Autor do livro: " + aluno.matricula);
-		System.out.println("Número de páginas: " + aluno.curso);
+		System.out.println("Digite o curso do aluno:");
+		aluno.curso = scan.next();
 		
-		// for disciplinas
-		System.out.println("Genero do livro: " + aluno.disciplinas);
+		for (int i = 0; i < aluno.disciplinas.length; i++) {
+			System.out.println("Digite o nome da disciplina: ");
+			aluno.disciplinas[i] = scan.next();
+		}
 		
-		//for notas
-		System.out.println("Editora: " + aluno.notas);
+		for (int i = 0; i < aluno.notas.length; i++) {
+			System.out.println("Obtendo notas da disciplina: " + aluno.disciplinas[i]);
+			for (int j =0; j < aluno.notas[i].length; j++) {
+				System.out.println("Digite a nota " + (j + 1));
+				aluno.notas[i][j] = scan.nextDouble();
+			}
+		}
+		
+		aluno.mostrarinfo();
+		
+		for (int i = 0; i < aluno.disciplinas.length; i++) {
+			System.out.print("Disciplina " + aluno.disciplinas[i]);
+			if (aluno.verificarAprovado(i) == true) {
+				System.out.println(" aluno aprovado!");
+			} else {
+				System.out.println(" aluno reprovado!");
+			}
+		}
 	}
 }
