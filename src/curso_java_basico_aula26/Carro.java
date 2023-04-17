@@ -6,11 +6,11 @@ public class Carro {
 	String modelo;
 	int numPassageiros;
 	double capCombustivel;
-	double consumocombustivel;
+	double consumoCombustivel;
 	
 	double obterAutonomia() {
 		
 		System.out.println("Metodo obterAutonomia foi chamado.");
-		return capCombustivel * consumocombustivel;
+		return capCombustivel * consumoCombustivel;
 	}
 }

@@ -5,6 +5,6 @@ public class Carro {
 	String modelo;
 	int numPassageiros;
 	double capCombustivel;
-	double consumocombustivel;
+	double consumoCombustivel;
 }
 	

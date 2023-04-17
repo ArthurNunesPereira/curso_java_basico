@@ -2,9 +2,14 @@ package exercicios_aulas25_27;
 
 public class JogoDaVelha {
 
-	char jogoDaVelha[][] = new char[3][3];
+	char jogoDaVelha[][];
 	int jogada = 1;
 
+	public JogoDaVelha() {
+		jogoDaVelha = new char[3][3];
+		jogada = 1;
+	}
+	
 	boolean validarJogada(int linha, int coluna, char sinal) {
 
 		if (jogoDaVelha[linha][coluna] == sinal || jogoDaVelha[linha][coluna] == 'O') {
