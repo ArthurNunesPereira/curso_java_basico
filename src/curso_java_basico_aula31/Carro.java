@@ -2,25 +2,28 @@ package curso_java_basico_aula31;
 
 public class Carro {
 
-	String marca;
+	public String marca;
 	String modelo;
 	int numPassageiros;
 	double capCombustivel;
-	double consumoCombustivel;
+	private double consumoCombustivel;
 	
-	void exibirAutonomia() {
+	public void exibirAutonomia() {
 		System.out.println("A autonomia do carro é: " + this.capCombustivel * this.consumoCombustivel);
 	}
 
-	double obterAutonomia() {
+	public double obterAutonomia() {
 		
 		System.out.println("Metodo obterAutonomia foi chamado.");
 		return this.capCombustivel * this.consumoCombustivel;
 	}
 	
-	double calcularCombustivel(double km) {
-		double qtdCombustivel = km / this.consumoCombustivel;
-		
-		return qtdCombustivel; // qtdCombustivel é uma variavel local do metodo calcularCombustivel()
+	private double divideKmPorConsumoCombustivel (double km) { // Metodo privado criado para fazer o calculo
+		return km / this.consumoCombustivel;
+	}
+	
+	public double calcularCombustivel(double km) {
+		return this.divideKmPorConsumoCombustivel(km); 
+		// Retornando o método (consegue acessar por que é da mesma classe) e assim protege o método de alterações indesejadas deixando ele como privado
 	}
 }
