@@ -5,9 +5,24 @@ public class Aluno {
 	private String nome;
 	private int matricula;
 	private String curso;
-	private String[] disciplinas = new String[3];
-	private double [][] notas = new double[3][4];
+	private String[] disciplinas;
+	private double [][] notas;
 	
+	public Aluno() {
+		disciplinas = new String[3];
+		notas = new double[3][4];
+	}
+	
+	
+	public Aluno(String nome, int matricula, String curso, String[] disciplinas, double[][] notas) {
+		super();
+		this.nome = nome;
+		this.matricula = matricula;
+		this.curso = curso;
+		this.disciplinas = disciplinas = new String[3];
+		this.notas = notas = new double[3][4];
+	}
+
 	public String getNome() {
 		return this.nome;
 	}
@@ -77,5 +92,13 @@ public class Aluno {
 			return true;
 		}
 		return false;
+	}
+	
+	public void setDisciplinasPos(int pos, String disciplinas) {
+		this.disciplinas[pos] = disciplinas;
+	}
+	
+	public void setNotasPosIJ(int posI, int posJ, double notas) {
+		this.notas[posI][posJ] = notas;
 	}
 }

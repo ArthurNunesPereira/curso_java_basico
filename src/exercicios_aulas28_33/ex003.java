@@ -20,16 +20,16 @@ public class ex003 {
 		System.out.println("Digite o curso do aluno:");
 		aluno.setCurso(scan.next());
 		
-		for (int i = 0; i < aluno.setDisciplinas().length; i++) {
+		for (int i = 0; i < aluno.getDisciplinas().length; i++) {
 			System.out.println("Digite o nome da disciplina: ");
-			aluno.setDisciplinas()[i] = scan.next();
+			aluno.setDisciplinasPos(i, scan.next());
 		}
 		
-		for (int i = 0; i < aluno.setNotas().length; i++) {
+		for (int i = 0; i < aluno.getNotas().length; i++) {
 			System.out.println("Obtendo notas da disciplina: " + aluno.getDisciplinas()[i]);
-			for (int j =0; j < aluno.setNotas()[i].length; j++) {
+			for (int j =0; j < aluno.getNotas()[i].length; j++) {
 				System.out.println("Digite a nota " + (j + 1));
-				aluno.setNotas()[i][j] = scan.nextDouble();
+				aluno.setNotasPosIJ(i, j, scan.nextDouble());
 			}
 		}
 		
