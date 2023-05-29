@@ -41,7 +41,7 @@ public class ex004 {
 			} else if (jogoDaVelha.verificarGanhador('O')){
 					vencedor = true;
 					System.out.println("O vencedor foi o Player [O]!");
-				} else if (jogoDaVelha.jogada > 9) {
+				} else if (jogoDaVelha.getJogada() > 9) { 
 					vencedor = true;
 					System.out.println("Nenhum vencedor, deu velha!");
 				}

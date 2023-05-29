@@ -2,15 +2,31 @@ package exercicios_aulas28_33;
 
 public class JogoDaVelha {
 
-	char jogoDaVelha[][];
-	int jogada = 1;
+	private char jogoDaVelha[][];
+	private int jogada;
 
 	public JogoDaVelha() {
 		jogoDaVelha = new char[3][3];
 		jogada = 1;
-	}
+	}	
 	
-	boolean validarJogada(int linha, int coluna, char sinal) {
+	public char[][] getJogoDaVelha() {
+		return this.jogoDaVelha;
+	}
+
+	public void setJogoDaVelha(char[][] jogoDaVelha) {
+		this.jogoDaVelha = jogoDaVelha;
+	}
+
+	public int getJogada() {
+		return this.jogada;
+	}
+
+	public void setJogada(int jogada) {
+		this.jogada = jogada;
+	}
+
+	public boolean validarJogada(int linha, int coluna, char sinal) {
 
 		if (jogoDaVelha[linha][coluna] == sinal || jogoDaVelha[linha][coluna] == 'O') {
 			return false;
@@ -21,7 +37,7 @@ public class JogoDaVelha {
 		}
 	}
 
-	void imprimirTabuleiro() {
+	public void imprimirTabuleiro() {
 
 		System.out.println("---Jogo da Velha---");
 		for (int i = 0; i < jogoDaVelha.length; i++) {
@@ -33,7 +49,7 @@ public class JogoDaVelha {
 		}
 	}
 
-	boolean verificarGanhador(char sinal) {
+	public boolean verificarGanhador(char sinal) {
 
 		if ((jogoDaVelha[0][0] == sinal && jogoDaVelha[0][1] == sinal && jogoDaVelha[0][2] == sinal) || // Linha 1
 			(jogoDaVelha[1][0] == sinal && jogoDaVelha[1][1] == sinal && jogoDaVelha[1][2] == sinal) || // Linha 2
@@ -48,7 +64,7 @@ public class JogoDaVelha {
 		return false;
 	}
 	
-	boolean vezJogador1() {
+	public boolean vezJogador1() {
 		if (jogada % 2 != 0) {
 			return true;
 		}
