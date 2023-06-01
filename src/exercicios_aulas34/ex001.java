@@ -1,34 +1,32 @@
 package exercicios_aulas34;
 
-import java.util.Scanner;
-
 public class ex001 {
+	
+	static void exibirContador() {
+		System.out.println(Contador.obterValor());
+	}
 
 	public static void main(String[] args) {
-		Scanner scan = new Scanner(System.in);
+
+		exibirContador();
 		
-		Lampada lampada = new Lampada();
+		Contador.incrementarContador();
 		
-		lampada.setModelo("A60");
-		lampada.setTensao("Bivolt");
-		lampada.setPotencia(7);
-		lampada.setCor("Branca");
-		lampada.setTipoLuz("Fria");
-		lampada.setGarantiaMeses(6);
+		exibirContador();
 		
-		System.out.println("Deseja ligar a lampada? [S/N]");
-		String opcao = scan.next();
+		Contador.zerarContador();
 		
-		if (opcao.equals("S") || opcao.equals("s")) {
-			 boolean ligar = lampada.ligarLampada();
-			 lampada.exibirFichaTecnica();
-			 System.out.println("A lampada esta ligada! | condição: " + ligar);
-		} else if (opcao.equals("N") || opcao.equals("n")) {
-			boolean ligar = lampada.desligarLampada();
-			lampada.exibirFichaTecnica();
-			System.out.println("A lampada não esta ligada! | condição: " + ligar);
-		} else {
-			System.out.println("Informação inválida por favor tente novamente!");
-		}
+		exibirContador();
+		
+		Contador.incrementarContador();
+		Contador.incrementarContador();
+		
+		exibirContador();	
+		
+		Contador cont1 = new Contador();
+		Contador cont2 = new Contador();
+		Contador cont3 = new Contador();
+		
+		exibirContador();
 	}
 }

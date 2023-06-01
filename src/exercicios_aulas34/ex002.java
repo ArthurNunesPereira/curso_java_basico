@@ -1,49 +1,48 @@
 package exercicios_aulas34;
 
-import java.text.DecimalFormat;
-import java.util.Scanner;
-
 public class ex002 {
+	
+	static void exibirValorSoma() {
+		Calculadora.setNum1(1);
+		Calculadora.setNum2(2);
+		System.out.println("O resultado da soma de " + Calculadora.getNum1() + " + " + Calculadora.getNum2() + " é = " + Calculadora.somar(Calculadora.getNum1(), Calculadora.getNum2()) + ".");
+	}
 
+	static void exibirValorSubtracao() {
+		Calculadora.setNum1(10);
+		Calculadora.setNum2(2);
+		System.out.println("O resultado da subtração de " + Calculadora.getNum1() + " - " + Calculadora.getNum2() + " é = " + Calculadora.subtrair(Calculadora.getNum1(), Calculadora.getNum2()) + ".");
+	}
+	
+	static void exibirValorMultiplicacao() {
+		Calculadora.setNum1(7);
+		Calculadora.setNum2(5);
+		System.out.println("O resultado da multiplicação de " + Calculadora.getNum1() + " * " + Calculadora.getNum2() + " é = " + Calculadora.multiplicar(Calculadora.getNum1(), Calculadora.getNum2()) + ".");
+	}
+	
+	static void exibirValorDivisao() {
+		Calculadora.setNum1(20);
+		Calculadora.setNum2(2);
+		System.out.println("O resultado da divisão de " + Calculadora.getNum1() + " / " + Calculadora.getNum2() + " é = " + Calculadora.dividir(Calculadora.getNum1(), Calculadora.getNum2()) + ".");
+	}
+	
+	static void exibirValorPotencia() {
+		Calculadora.setNum1(2);
+		Calculadora.setNum2(5);
+		System.out.println("O resultado de " + Calculadora.getNum1() + " elevado a potência " + Calculadora.getNum2() + " é = " + Calculadora.potencia(Calculadora.getNum1(), Calculadora.getNum2()) + ".");
+	}
+	
 	public static void main(String[] args) {
-		Scanner scan = new Scanner(System.in);
-		DecimalFormat formatador = new DecimalFormat("0.00");
-
-		ContaCorrente contaCorrente = new ContaCorrente();
-
-		contaCorrente.setNumero("99");
-		contaCorrente.setAgencia("2850");
-		contaCorrente.setContaEspecial(true);
-		contaCorrente.setLimiteEspecial(500);
-		contaCorrente.setSaldo(-10);
-		contaCorrente.setValorEspecialUsado(0);
-
-		boolean saqueEfetuado = contaCorrente.realizarSaque(500);
 		
-		if (saqueEfetuado) {
-			System.out.println("Saque efetuado com sucesso!");
-			contaCorrente.consultarSaldo();
-		} else {
-			System.out.println("Não foi possível realizar o saque, saldo insuficiente!");
-		}
+		exibirValorSoma();
 		
-		System.out.println("Depósito de 500 reais");
-		contaCorrente.depositar(500);
-		contaCorrente.consultarSaldo();
-
-		if (contaCorrente.verificarUsoChequeEspecial()) {
-			System.out.println("Está usando cheque especial");
-		} else {
-			System.out.println("Não está usando cheque especial");
-		}
+		exibirValorSubtracao();
 		
-		contaCorrente.realizarSaque(600);
-		contaCorrente.consultarSaldo();
-		if (contaCorrente.verificarUsoChequeEspecial()) {
-			System.out.println("Está usando cheque especial");
-		} else {
-			System.out.println("Não está usando cheque especial");
-		}
+		exibirValorMultiplicacao();
+		
+		exibirValorDivisao();
+		
+		exibirValorPotencia();
 	}
 }
 
