@@ -1,12 +1,19 @@
 package exercicios_aulas34;
 
-import java.util.Scanner;
-
 public class ex003 {
 
-	public static void main(String[] args) {
-		Scanner scan = new Scanner(System.in);
+	static void calcularFatorial() {
+		Calculadora.setNum1(5);
+		int fat = 1;
 		
-		//Calcular fatorial de um numero da Classe Calculadora.
+		for(int i = Calculadora.getNum1(); i > 0 ; i--) {
+			fat *= i;
+		}
+		System.out.println(Calculadora.getNum1() + "! = " + fat);
+	}
+	
+	public static void main(String[] args) {
+		
+		calcularFatorial();
 	}
 }
