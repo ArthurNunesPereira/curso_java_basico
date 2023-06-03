@@ -4,7 +4,6 @@ public class Calculadora {
 
 	private static int num1;
 	private static int num2;
-	private static int numPotencia;
 	
 	public static int getNum1() {
 		return num1;
@@ -20,14 +19,6 @@ public class Calculadora {
 
 	public static void setNum2(int num2) {
 		Calculadora.num2 = num2;
-	}
-
-	public static int getNumPotencia() {
-		return numPotencia;
-	}
-
-	public static void setNumPotencia(int numPotencia) {
-		Calculadora.numPotencia = numPotencia;
 	}
 
 	public static int somar(int num1, int num2) {
@@ -48,5 +39,15 @@ public class Calculadora {
 	
 	public static int potencia(int num1, int num2) {
 		return (int) Math.pow(num1, num2);
+	}
+	
+	public static void calcularFatorial() {
+		Calculadora.setNum1(5);
+		int fat = 1;
+		
+		for(int i = Calculadora.getNum1(); i > 0 ; i--) {
+			fat *= i;
+		}
+		System.out.println(Calculadora.getNum1() + "! = " + fat);
 	}
 }
