@@ -5,6 +5,13 @@ public class Agenda {
 	private String nomeAgenda;
 	private Contato[] contatos;
 	
+	public Agenda() {
+	}
+	
+	public Agenda(String nomeAgenda) {
+		this.nomeAgenda = nomeAgenda;
+	}
+
 	public String getNomeAgenda() {
 		return nomeAgenda;
 	}

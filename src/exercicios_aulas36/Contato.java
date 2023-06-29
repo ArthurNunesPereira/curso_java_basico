@@ -3,8 +3,8 @@ package exercicios_aulas36;
 public class Contato {
 
 	private String nome;
-	private Telefone[] telefones;
-	private Email[] emails;
+	private String telefone;
+	private String email;
 	
 	public String getNome() {
 		return nome;
@@ -13,20 +13,20 @@ public class Contato {
 	public void setNome(String nome) {
 		this.nome = nome;
 	}
-	
-	public Telefone[] getTelefones() {
-		return telefones;
+
+	public String getTelefone() {
+		return telefone;
 	}
-	
-	public void setTelefones(Telefone[] telefones) {
-		this.telefones = telefones;
+
+	public void setTelefone(String telefone) {
+		this.telefone = telefone;
 	}
-	
-	public Email[] getEmails() {
-		return emails;
+
+	public String getEmail() {
+		return email;
 	}
-	
-	public void setEmails(Email[] emails) {
-		this.emails = emails;
+
+	public void setEmail(String email) {
+		this.email = email;
 	}
 }
