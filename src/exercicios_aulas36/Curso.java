@@ -1,15 +1,15 @@
 package exercicios_aulas36;
 
 public class Curso {
-	
+
 	private String nome;
 	private String horario;
 	private Professor professor;
 	private Aluno[] alunos;
-	
+
 	public Curso() {
 	}
-	
+
 	public Curso(String nome, String horario, Professor professor, Aluno[] alunos) {
 		super();
 		this.nome = nome;
@@ -49,6 +49,36 @@ public class Curso {
 	public void setAlunos(Aluno[] alunos) {
 		this.alunos = alunos;
 	}
+
+	public String obterInfo() {
+		String info = "Nome do curso = " + nome + "\n";
+		info += "Horário do curso = " + horario + "\n";
+
+		if (professor != null) {
+			info += professor.obterInfo();
+		}
+
+		info += "---Alunos---" + "\n";
+		if (alunos != null) {
+			for (Aluno aluno : alunos) {
+				if (aluno != null) {
+					info += aluno.obterInfo();
+					info += "\n";
+				}
+			}
+			info += "\nMédia da turma = " + obterMediaTurma();
+		}
+		return info;
+	}
 	
-	
+	public double obterMediaTurma() {
+		double soma = 0;
+		
+		for (Aluno aluno : alunos) {
+			if (aluno != null) {
+				soma += aluno.obterMedia();
+			}
+		}
+		return soma / alunos.length;
+	}
 }

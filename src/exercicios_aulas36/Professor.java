@@ -28,6 +28,6 @@ public class Professor {
 	public String obterInfo() {
 		return "Nome do professor = " + nome + "; " +
 				"Departamento = " + departamento + "; " +
-				"Email = " + email;
+				"Email = " + email + "\n";
 	}
 }

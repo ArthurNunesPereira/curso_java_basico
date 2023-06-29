@@ -26,10 +26,33 @@ public class Aluno {
 	}
 	
 	public String obterInfo() {
-		return "";
+		 String info = "Nome do Aluno = " + nome + "; ";
+				info += "Matricula = " + matricula + "; ";
+				info += "Notas = ";
+		 
+				double soma = 0;
+		 		for (double nota : notas) {
+		 			soma += nota;
+		 			info += nota + " ";
+		 		}
+		 		
+				double media = soma / 4;
+				info += "\n" + "Média = " + media + " - ";
+				
+				if (media >= 7) {
+					info += "Aprovado!";
+				} else {
+					info += "Reprovado!";
+				}
+				
+		 return info;
 	}
 	
 	public double obterMedia() {
-		return 10;
+		double soma = 0;
+		for (double nota : notas) {
+			soma += nota;
+		}
+		return soma / 4;
 	}
 }

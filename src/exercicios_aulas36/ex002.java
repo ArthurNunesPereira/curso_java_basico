@@ -48,7 +48,10 @@ public class ex002 {
 			alunos[i] = aluno;
 		}
 		
+		curso.setProfessor(professor);
 		curso.setAlunos(alunos);
+		
+		System.out.println(curso.obterInfo()); 
 	}
 }
 
