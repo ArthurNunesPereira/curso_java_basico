@@ -29,4 +29,11 @@ public class Contato {
 	public void setEmail(String email) {
 		this.email = email;
 	}
+	
+	public String obterInfo() {
+		return "Contato = " + "Nome = " + nome + "; " +
+				"Telefone = " + telefone + "; " +
+				"Email = " + email;
+		
+	}
 }

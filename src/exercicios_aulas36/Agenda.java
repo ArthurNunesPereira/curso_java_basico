@@ -27,4 +27,16 @@ public class Agenda {
 	public void setContatos(Contato[] contatos) {
 		this.contatos = contatos;
 	}	
+	
+	public String obterInfo() {
+		String info = "Nome da agenda = " + nomeAgenda + "\n";
+		
+		if (contatos != null) {
+			for (Contato c : contatos) {
+				info += c.obterInfo() + "\n";
+			}
+		}
+		
+		return info;
+	}
 }
