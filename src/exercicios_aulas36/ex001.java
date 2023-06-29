@@ -2,8 +2,6 @@ package exercicios_aulas36;
 
 import java.util.Scanner;
 
-import curso_java_basico_aula36.Telefone;
-
 public class ex001 {
 	
 	public static void main(String[] args) {
