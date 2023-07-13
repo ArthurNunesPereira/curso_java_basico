@@ -1,0 +1,23 @@
+Herança múltipla
+Em Java, é importante notar que a herança múltipla não é permitida.
+A herança múltipla ocorre quando uma subclasse herda de duas ou mais superclasses. Por exemplo:
+public class ContaPoupanca extends Conta, Pagamento {
+  //codigo da classe omitido
+}
+O código anterior não compila, pois o extends aceita apenas uma única classe, ou seja,
+uma classe pode ter apenas uma superclasse.
+
+Entretanto, é possível criar uma hierarquia de classes utilizando herança,
+simulando com isso uma herança múltipla. Por exemplo:
+public class Conta {
+  //codigo da classe omitido
+}
+public class ContaCorrente extends Conta {
+  //codigo da classe omitido
+}
+public class ContaCorrentePessoaFisica extends ContaCorrente {
+  //codigo da classe omitido
+}
+No código anterior, a classe ContaCorrentePessoaFisica está herdando de ContaCorrente,
+que por sua vez herda da classe Conta, ou seja,
+indiretamente a classe ContaCorrentePessoaFisica vai herdar de Conta, pois sua superclasse herda dela.
