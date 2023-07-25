@@ -1,6 +1,6 @@
 package curso_java_basico_aula43.labs;
 
-public class Contribuinte {
+public abstract class Contribuinte {
 
 	private String nome;
 	private double rendaBruta;
@@ -18,11 +18,13 @@ public class Contribuinte {
 		this.rendaBruta = rendaBruta;
 	}
 	
+	public abstract double calcularImposto();
+	
 	@Override
 	public String toString() {
-		String s = "Contribuinte [nome=" + nome + ", rendaBruta=" + rendaBruta + "]";
-		
-		return s;
+		 String s = "Nome: " + nome;
+	        s += " ;rendaBruta: " + rendaBruta;
+	        return s;
 	}
 	
 }

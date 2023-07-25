@@ -14,10 +14,16 @@ public class PessoaJuridica extends Contribuinte{
 
 	@Override
 	public String toString() {
-		return "PessoaJuridica [cnpj=" + cnpj + "]";
+		 String s = "Pessoa Jurídica[";
+	        s += super.toString();
+	        s += " ;cnpj: " + cnpj;
+	        s += " ;imposto a ser pago: " + calcularImposto();
+	        s += "]";
+	        return s;
 	}
 	
+	@Override
 	public double calcularImposto() {
-		return 0;
+		return this.getRendaBruta() * 0.1;
 	}
 }
