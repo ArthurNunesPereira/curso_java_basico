@@ -1,4 +1,4 @@
-package curso_java_basico_aula43.labs;
+package curso_java_basico_aula43.labs.Ex001;
 
 public class ContaEspecial extends ContaBancaria {
 
