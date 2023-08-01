@@ -1,23 +1,41 @@
 package curso_java_basico_aula43.labs.Ex003;
 
-import java.util.Scanner;
-
 public class ex003 {
 	
 	public static void main(String[] args) {
-		Scanner scan = new Scanner(System.in);
 		
-		Animal animal = new Animal();
+		System.out.println("------Zoologico------");
 		
-		System.out.println(animal.toString());
+		Animal camelo = new Animal();
+		camelo.setNome("Camelo");
+		camelo.setComprimento(150);
+		camelo.setCor("Amarelo");
+		camelo.setAmbiente("Deserto");
+		camelo.setVelocidade(2);
 		
-		Peixe peixe = new Peixe();
+		Peixe tubarao = new Peixe();
+		tubarao.setNome("Tubarão");
+		tubarao.setComprimento(300);
+		tubarao.setVelocidade(1.5);
 		
-		System.out.println(peixe.toString());
+		Mamifero ursoDoCanada = new Mamifero();
+		ursoDoCanada.setNome("Urso do Canada");
+		ursoDoCanada.setComprimento(180);
+		ursoDoCanada.setCor("Vermelho");
+		ursoDoCanada.setAmbiente("Floresta");
+		ursoDoCanada.setVelocidade(0.5);
+		ursoDoCanada.setAlimento("Mel");
 		
-		Mamifero mamifero = new Mamifero();
-		
-		System.out.println(mamifero.toString());
+		Animal[] animais = new Animal[3];
+        animais[0] = camelo;
+        animais[1] = tubarao;
+        animais[2] = ursoDoCanada;
+        
+        System.out.println("-----------------------");
+        for (Animal animal : animais){
+            System.out.println(animal);
+            System.out.println("-----------------------");
+        }
 	}
 }
 

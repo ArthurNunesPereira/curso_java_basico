@@ -4,6 +4,15 @@ public class Peixe extends Animal{
 
 	private String caracteristicas;
 
+	
+	
+	public Peixe() {
+		this.setNumPatas(0);
+		this.setAmbiente("Mar");
+		this.setCor("Cinza");
+		this.setCaracteristicas("Barbatanas e calda");
+	}
+
 	public String getCaracteristicas() {
 		return caracteristicas;
 	}
@@ -15,8 +24,8 @@ public class Peixe extends Animal{
 	@Override
 	public String toString() {
 		String s = super.toString();
-		s += "Peixe [caracteristicas=" + caracteristicas + "]";
-		return s;
+        s += "\nCaracterísticas: " + caracteristicas;
+        return s;
 	}
 	
 	
